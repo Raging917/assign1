@@ -24,12 +24,10 @@ void setup () {
 }
   
 void draw() {
-  //bg2X += speedBg2;
-  //bg2X %= 640;
-  image(bg2,bg2X,0);
-  //bg1X += speedBg1;
-  //bg1X %= 480;
-  //image(bg1,bg1X,0);
+  
+  image(bg1,bg1X % 1280 -640,0);
+  image(bg2,(bg1X+640) % 1280 -640,0);
+  bg1X +=1;
   
   image(treasure,trX,trY);
   
@@ -45,5 +43,5 @@ void draw() {
   enemyX %= 640;
   image(enemy,enemyX,enY);
   
-  
 }
+
