@@ -25,9 +25,8 @@ void setup () {
   
 void draw() {
   
-  image(bg1,bg1X % 1280 -640,0);
-  image(bg2,(bg1X+640) % 1280 -640,0);
-  bg1X +=1;
+  image(bg1,++bg2X %1280-640,0);
+  image(bg2,(bg2X+640) %1280-640,0);
   
   image(treasure,trX,trY);
   
