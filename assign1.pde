@@ -6,8 +6,7 @@ int trX = floor(random(600)), trY = floor(random(440)); //寶物位置
 int enY = floor(random(420)); //敵機Y位置
 int enemyX = 0;
 int speedE = 3; //敵機速度
-int bg1X = 0, bg2X = 0;
-int speedBg1 =1, speedBg2 = 1;
+int bg2X = 0;
 
 void setup () {
   size(640,480) ;  // must use this size.
@@ -25,8 +24,9 @@ void setup () {
   
 void draw() {
   
-  image(bg1,++bg2X %1280-640,0);
-  image(bg2,(bg2X+640) %1280-640,0);
+  image(bg1, bg2X %1280 -640, 0);
+  bg2X += 1;
+  image(bg2, (bg2X+640) %1280 -640, 0);
   
   image(treasure,trX,trY);
   
@@ -42,5 +42,5 @@ void draw() {
   enemyX %= 640;
   image(enemy,enemyX,enY);
   
+  
 }
-
